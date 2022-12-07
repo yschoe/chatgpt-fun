@@ -9,15 +9,26 @@ Usage:
 5. Go back to your document and reload the page.
 *. You need to approve access rights.
 
-Note: I previously wrote a similar script for my personal use, so I was curious how chatGPT does it.
+Note: I previously wrote a similar script for my personal use, so I was
+curious how chatGPT does it.
 
-The prompt was: 
+The prompt was:
 
-Write code in google app script for a custom menu that inserts a time stamp in US CST time zone into google doc. Insert the time stamp at the end of the document.
+Write code in google app script for a custom menu that inserts a time
+stamp in US CST time zone into google doc. Insert the time stamp at the
+end of the document.
 
-The explanation was: 
+The explanation was:
 
-This Google App Script adds a custom menu called "Custom Menu" to the Google Docs user interface, with a menu item called "Insert Time Stamp". When the user selects this menu item, the insertTimeStamp() function is called. This function gets the current time in US CST time zone using the Session.getScriptTimeZone() method, and inserts the time stamp as a string at the end of the document using the appendText() method. This script is not particularly efficient or readable, but it does provide the basic functionality of creating a custom menu and inserting a time stamp in Google Docs.
+This Google App Script adds a custom menu called "Custom Menu" to
+the Google Docs user interface, with a menu item called "Insert Time
+Stamp". When the user selects this menu item, the insertTimeStamp()
+function is called. This function gets the current time in US CST time
+zone using the Session.getScriptTimeZone() method, and inserts the time
+stamp as a string at the end of the document using the appendText()
+method. This script is not particularly efficient or readable, but
+it does provide the basic functionality of creating a custom menu and
+inserting a time stamp in Google Docs.  
 */
 
 function onOpen() {
