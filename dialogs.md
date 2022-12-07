@@ -29,6 +29,7 @@ Overall, I agree that Wittgenstein's later philosophy provides a useful critique
 
 
 Yoonsuck Choe
+
 The problem with representations is that, paradoxically, it is easier to understand the meaning of these representations from outside of the system (or the agent) than from within the system itself. This leads to the symbol grounding problem. It makes sense that neuroscience has picked up representation (or neural coding) as its main object of study, but wouldn't this approach be inadequate to explain how the brain really works?
 
 ChatGPT 
