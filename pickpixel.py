@@ -5,11 +5,12 @@ from PIL import Image, ImageTk
 filename = "image.png"
 
 # Load the image file and create a Tkinter PhotoImage object
+root = tk.Tk() # Yoonsuck Choe - This was moved here from below
 image = Image.open(filename)
 photo = ImageTk.PhotoImage(image)
 
 # Set up the Tkinter window
-root = tk.Tk()
+#root = tk.Tk() : Yoonsuck Choe - This had to be moved above.
 root.title("Image Click Demo")
 
 # Create a Tkinter Canvas widget and display the image on it
