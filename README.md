@@ -5,4 +5,8 @@ Just for fun!
 
 I got OpenAI's chatGPT to generate some short and useful programs. The prompt used are included at the top of each program.
 
+Here's an example:
+
+![example session](example-session.png)
+
 Enjoy!
