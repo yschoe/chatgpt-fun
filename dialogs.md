@@ -109,6 +109,7 @@ Taking the internal perspective of brain function, also known as the first-perso
 The first-person perspective can provide insights into the nature of consciousness, the relationship between the mind and the brain, and the subjective experience of the world. For example, the first-person perspective can provide information about the content of consciousness, such as the sensations, perceptions, emotions, thoughts, and intentions that are experienced by the individual. It can also provide information about the structure of consciousness, such as the temporal and spatial dynamics of the flow of consciousness, and the relationship between different components of consciousness. The first-person perspective can also provide insights into the relationship between the mind and the brain, such as the influence of the brain on the mind, and the influence of the mind on the brain. However, the first-person perspective is subjective and introspective, and it is subject to biases, errors, and limitations, and it must be interpreted and integrated with the third-person perspective in order to gain a comprehensive understanding of the brain and consciousness.
 
 ## 12/05/2022 : on GPT's form of existence: virtual or physical (text-davinci-003)
+Note: This was in OpenAI's playground, using the text-davinci-002 language model.
 
 Human: What hardware do you run on?
 
