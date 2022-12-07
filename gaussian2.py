@@ -1,15 +1,27 @@
 '''
 chatGPT fun by Yoonsuck Choe
 
-Note: This is a revised version of gaussian.py. I added the extra sentence at the end "Show the animation for a single normal distribution, and plot each sample one by one."
+Note: This is a revised version of gaussian.py. I added the extra sentence
+at the end "Show the animation for a single normal distribution, and
+plot each sample one by one."
 
-Prompt was:
+The prompt was:
 
-Write a python code to show an animation where (x,y) values are sampled from a two demensional normal distribution of mean (0,0) and the identity matrix as the covariance matrix. Show the animation for a single normal distribution, and plot each sample one by one.
+Write a python code to show an animation where (x,y) values are sampled
+from a two demensional normal distribution of mean (0,0) and the identity
+matrix as the covariance matrix. Show the animation for a single normal
+distribution, and plot each sample one by one.
 
 The explanation by chatGPT was:
 
-This program uses the np.random.multivariate_normal() function to sample points from a normal distribution with mean (0, 0) and an identity matrix as the covariance matrix. The update() function is called repeatedly by the animation framework to sample a new point and update the animation. The animation shows how the points are distributed according to the normal distribution. This program is not particularly efficient or readable, but it does provide a visual demonstration of a normal distribution using an animation.
+This program uses the np.random.multivariate_normal() function to
+sample points from a normal distribution with mean (0, 0) and an
+identity matrix as the covariance matrix. The update() function is
+called repeatedly by the animation framework to sample a new point and
+update the animation. The animation shows how the points are distributed
+according to the normal distribution. This program is not particularly
+efficient or readable, but it does provide a visual demonstration of a
+normal distribution using an animation.
 
 '''
 import numpy as np

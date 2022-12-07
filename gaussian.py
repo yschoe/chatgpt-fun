@@ -1,11 +1,14 @@
 '''
 chatGPT fun : Yoonsuck Choe
 
-Note: This did not give the desired result, so I further elaborated it in gaussian2.py.
+Note: This did not give the desired result, so I further elaborated it
+in gaussian2.py.
 
-Prompt was:
+The prompt was:
 
-Write a python code to show an animation where (x,y) values are sampled from a two demensional normal distribution of mean (0,0) and the identity matrix as the covariance matrix. 
+Write a python code to show an animation where (x,y) values are sampled
+from a two demensional normal distribution of mean (0,0) and the identity
+matrix as the covariance matrix.
 
 The explanation by chatGPT was:
 Choe: Please see the explanation in gaussian2.py, which was similar.
