@@ -1,5 +1,5 @@
 '''
-chatGPT fun by Yoonsuck Choe
+ChatGPT fun by Yoonsuck Choe
 
 Note: This is a revised version of gaussian.py. I added the extra sentence
 at the end "Show the animation for a single normal distribution, and

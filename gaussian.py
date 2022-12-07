@@ -1,5 +1,5 @@
 '''
-chatGPT fun : Yoonsuck Choe
+ChatGPT fun : Yoonsuck Choe
 
 Note: This did not give the desired result, so I further elaborated it
 in gaussian2.py.

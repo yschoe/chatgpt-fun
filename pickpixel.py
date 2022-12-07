@@ -1,5 +1,5 @@
 '''
-chatgpt fun by Yoonsuck Choe
+Chatgpt fun by Yoonsuck Choe
 
 Note: There was a small bug. I just had to manually move a single line
 in the code.
