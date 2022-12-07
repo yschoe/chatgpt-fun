@@ -7,6 +7,7 @@ in the code.
 Note: Click on several pixels, then close the window, and the coordinates
 will be printed in the console.
 
+
 The prompt was:
 
 Write code in python with a graphical user interface where you can load
@@ -25,6 +26,23 @@ canvas, and it prints the (x,y) coordinate of the clicked pixel to the
 console when the event is triggered. This program is not particularly
 efficient or readable, but it does provide the basic functionality of
 loading an image and clicking on a pixel to print its coordinate.
+
+The follow up prompt I gave:
+The root = tk.Tk()  line must appear before the image creation line.
+
+The response by ChatGPT was:
+
+You are correct. In the previous code, the root = tk.Tk() line should
+appear before the line that creates the Tkinter PhotoImage object from the
+image file. This is because the Tkinter PhotoImage object must be created
+after the Tkinter window has been initialized. Here is the updated code
+with the correct order of the lines:
+
+    [ Here goes the corrected program ]
+
+In this updated code, the root = tk.Tk() line appears before the line
+that creates the Tkinter PhotoImage object. This ensures that the Tkinter
+window is properly initialized before the PhotoImage
 
 '''
 
