@@ -1,5 +1,7 @@
 # Dialog with ChatGPT
 
+This is a series of conversations with OpenAI's ChatGPT [http://chat.openai.com](http://chat.openai.com). You need a login ID (you can use your google ID to create one).
+
 ## 12/07/2022 : Kantian vs. Wittgenstein, regarding mental representations (ChatGPT)
 
 Yoonsuck Choe
