@@ -3,6 +3,7 @@
 ## 12/07/2022 : Kantian vs. Wittgenstein, regarding mental representations (ChatGPT)
 
 Yoonsuck Choe
+
 Good morning! I am back.
 
 ChatGPT 
