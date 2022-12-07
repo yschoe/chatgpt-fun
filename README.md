@@ -1,5 +1,7 @@
 # chatgpt-fun
 
+This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](http://chat.openai.com). You need a login ID (you can use your google ID to create one).
+
 ## News
 
 * 12/07/2022: Casual dialog session log added: [dialogs.md](dialogs.md) 
