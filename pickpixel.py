@@ -1,17 +1,30 @@
 '''
 chatgpt fun by Yoonsuck Choe
 
-Note: There was a small bug. I just had to manually move a single line in the code.
+Note: There was a small bug. I just had to manually move a single line
+in the code.
 
-Note: Click on several pixels, then close the window, and the coordinates will be printed in the console.
+Note: Click on several pixels, then close the window, and the coordinates
+will be printed in the console.
 
 The prompt was:
 
-Write code in python with a graphical user interface where you can load a image file (with a specific name), and click on the pixel to print out the clicked pixel's (x,y) coordinate in the console. 
+Write code in python with a graphical user interface where you can load
+a image file (with a specific name), and click on the pixel to print
+out the clicked pixel's (x,y) coordinate in the console.
 
 The explanation by chatGPT was:
 
-This program uses the Tkinter and PIL libraries to create a graphical user interface that allows the user to load an image file and click on a pixel to print out its (x,y) coordinate in the console. The program first loads the specified image file and creates a Tkinter PhotoImage object to display the image on a Tkinter Canvas widget. The on_click() callback function is bound to the left mouse button click event on the canvas, and it prints the (x,y) coordinate of the clicked pixel to the console when the event is triggered. This program is not particularly efficient or readable, but it does provide the basic functionality of loading an image and clicking on a pixel to print its coordinate.
+This program uses the Tkinter and PIL libraries to create a graphical
+user interface that allows the user to load an image file and click on
+a pixel to print out its (x,y) coordinate in the console. The program
+first loads the specified image file and creates a Tkinter PhotoImage
+object to display the image on a Tkinter Canvas widget. The on_click()
+callback function is bound to the left mouse button click event on the
+canvas, and it prints the (x,y) coordinate of the clicked pixel to the
+console when the event is triggered. This program is not particularly
+efficient or readable, but it does provide the basic functionality of
+loading an image and clicking on a pixel to print its coordinate.
 
 '''
 
