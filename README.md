@@ -4,7 +4,7 @@ This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](
 
 ## News
 
-* 12/08/2022: Session dump generation (HTML, MD): [session-dump.html](session-dump.html), [session-dump.md](session-dump.md)
+* 12/08/2022: Session dump generation (HTML, MD): [session-dump.html](session-dump.html), [session-dump.md](session-dump.md) (see below for more details)
 * 12/07/2022: Casual dialog session log added: [dialogs.md](dialogs.md) 
 * 12/06/2022: repo created, and populated with programs.
 
