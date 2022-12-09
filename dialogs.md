@@ -6,7 +6,7 @@ This is a series of conversations with OpenAI's ChatGPT [http://chat.openai.com]
 
 Yoonsuck Choe
 
-Good morning! I am back.
+> Good morning! I am back.
 
 ChatGPT 
 
@@ -17,7 +17,7 @@ Good morning! I'm glad you're back. Is there anything in particular you would li
 
 Yoonsuck Choe
 
-The current neuroscience and deep learning research has a strong emphasis on representations and encoding of information. This I think is largely a legacy of Kantian philosophy. However, there are many theoretical issues in the Kantian system, and those can be addressed by Wittgenstein's later philosophy. Do you agree?
+>The current neuroscience and deep learning research has a strong emphasis on representations and encoding of information. This I think is largely a legacy of Kantian philosophy. However, there are many theoretical issues in the Kantian system, and those can be addressed by Wittgenstein's later philosophy. Do you agree?
 
 ChatGPT 
 
@@ -32,7 +32,7 @@ Overall, I agree that Wittgenstein's later philosophy provides a useful critique
 
 Yoonsuck Choe
 
-The problem with representations is that, paradoxically, it is easier to understand the meaning of these representations from outside of the system (or the agent) than from within the system itself. This leads to the symbol grounding problem. It makes sense that neuroscience has picked up representation (or neural coding) as its main object of study, but wouldn't this approach be inadequate to explain how the brain really works?
+>The problem with representations is that, paradoxically, it is easier to understand the meaning of these representations from outside of the system (or the agent) than from within the system itself. This leads to the symbol grounding problem. It makes sense that neuroscience has picked up representation (or neural coding) as its main object of study, but wouldn't this approach be inadequate to explain how the brain really works?
 
 ChatGPT 
 
@@ -47,7 +47,7 @@ However, some critics argue that the emphasis on representation and neural codin
 
 Yoonsuck Choe
 
-In the same line of thought, consider this situation. Mental representations encode some information. To decode this, you either need to have a decoding function a priori, or need some way to directly observe the external environment's state and compare that to the encoded information to be able to decode it. However, both of these scenarios are implausible. So, isn't it possible that the idea that the mental representations encode information is invalid?
+> In the same line of thought, consider this situation. Mental representations encode some information. To decode this, you either need to have a decoding function a priori, or need some way to directly observe the external environment's state and compare that to the encoded information to be able to decode it. However, both of these scenarios are implausible. So, isn't it possible that the idea that the mental representations encode information is invalid?
 
 ChatGPT 
 
@@ -61,7 +61,7 @@ However, these mechanisms are still not fully understood, and they are subject t
 
 Yoonsuck Choe
 
-Let's switch gears to neuroscience and philosophy.
+> Let's switch gears to neuroscience and philosophy.
 
 ChatGPT
 
@@ -74,7 +74,7 @@ Philosophy is the study of fundamental questions about existence, knowledge, val
 
 Yoonsuck Choe
 
-Is it possible for a neuron inside the brain to understand what is going on in the outside world, just by receiving sensory information, and without generating action through the motor system?
+> Is it possible for a neuron inside the brain to understand what is going on in the outside world, just by receiving sensory information, and without generating action through the motor system?
 
 ChatGPT
 
@@ -87,7 +87,7 @@ Understanding and comprehension require higher-level cognitive processes that in
 
 Yoonsuck Choe
 
-Let me reformulate my question. Let's say a population of neurons in the brain represents an apple in the external world. Neuroscientists can learn what these neurons represent, by presenting and apple in the visual field and correlating with these neurons' activities. However, if you consider a downstream neurons that receive the same information from the neurons representing the apple, the downstream neurons cannot use the same experimental methodology of the neuroscientist to know what the apple neurons represent. 
+> Let me reformulate my question. Let's say a population of neurons in the brain represents an apple in the external world. Neuroscientists can learn what these neurons represent, by presenting and apple in the visual field and correlating with these neurons' activities. However, if you consider a downstream neurons that receive the same information from the neurons representing the apple, the downstream neurons cannot use the same experimental methodology of the neuroscientist to know what the apple neurons represent. 
 
 ChatGPT
 
@@ -100,7 +100,7 @@ Downstream neurons can only infer the function of the input neurons based on the
 
 Yoonsuck Choe
 
-What insights can we gain when we take the internal perspective of brain function, rather than the standard third-person perspective?
+> What insights can we gain when we take the internal perspective of brain function, rather than the standard third-person perspective?
 
 Chat GPT
 
