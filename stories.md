@@ -69,11 +69,13 @@ As a result of the book's success, Emma became a renowned expert in four-dimensi
 
 
 
-## 12/09/2022: ChatGPT creates its own prompt and writes a story: neuroscience and aliens (ChatGPT)
+## 12/09/2022: Neuroscience and alien consciousness: ChatGPT creates its own prompt and writes a story (ChatGPT)
 
 Yoonsuck Choe
 
 > Write a prompt that can lead to a very interesting science fiction short story that include neuroscience of consciousness.
+
+ChatGPT 
 
 As the lead neuroscientist on the team studying the newly discovered alien species, you are tasked with understanding the unique neural structures of their brains. After months of research, you make a groundbreaking discovery: the aliens have the ability to control their own consciousness, allowing them to switch between different states of being at will.
 
@@ -87,6 +89,8 @@ As you struggle to come to terms with your new abilities and the ethical implica
 Yoonsuck Choe
 
 > Write a short story based on your prompt.
+
+ChatGPT 
 
 As the lead neuroscientist on the team studying the newly discovered alien species, I was tasked with understanding the unique neural structures of their brains. After months of research, I made a groundbreaking discovery: the aliens had the ability to control their own consciousness, allowing them to switch between different states of being at will.
 
