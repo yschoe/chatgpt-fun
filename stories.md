@@ -1,8 +1,8 @@
 # Stories written by ChatGPT
 
 ## Contents:
-1. [https://github.com/yschoe/chatgpt-fun/blob/main/stories.md#12092022-infants-brought-up-in-a-4d-vr-world-chatgpt](Infants brought up in a 4D VR world)
-2. [https://github.com/yschoe/chatgpt-fun/blob/main/stories.md#12092022-neuroscience-and-alien-consciousness-chatgpt-creates-its-own-prompt-and-writes-a-story-chatgpt](Neuroscience and alien consciousness: ChatGPT creates its own prompt and writes a story)
+1. [#12092022-infants-brought-up-in-a-4d-vr-world-chatgpt](Infants brought up in a 4D VR world)
+1. [#12092022-neuroscience-and-alien-consciousness-chatgpt-creates-its-own-prompt-and-writes-a-story-chatgpt](Neuroscience and alien consciousness: ChatGPT creates its own prompt and writes a story)
 
 ## 12/09/2022: Infants brought up in a 4D VR world (ChatGPT)
 
