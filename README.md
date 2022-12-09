@@ -4,6 +4,7 @@ This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](
 
 ## News
 
+* 12/09/2022: Short stories: [stories.md](stories.md)
 * 12/08/2022: Conversation session dump generation (HTML, MD): [session-dump-howto.md](session-dump-howto.md)
 * 12/07/2022: Casual dialog session log added: [dialogs.md](dialogs.md) 
 * 12/06/2022: repo created, and populated with programs.
@@ -11,6 +12,10 @@ This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](
 ## Dialogs 
 
 These are some dialogs with ChatGPT: [dialogs.md](dialogs.md)
+
+## Stories
+
+Here are some short stories: [stories.md](stories.md)
 
 ## Generating session dump in HTML or Github MD
 
