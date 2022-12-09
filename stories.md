@@ -69,3 +69,39 @@ As a result of the book's success, Emma became a renowned expert in four-dimensi
 
 
 
+## 12/09/2022: ChatGPT creates its own prompt and writes a story: neuroscience and aliens (ChatGPT)
+
+Yoonsuck Choe
+
+> Write a prompt that can lead to a very interesting science fiction short story that include neuroscience of consciousness.
+
+As the lead neuroscientist on the team studying the newly discovered alien species, you are tasked with understanding the unique neural structures of their brains. After months of research, you make a groundbreaking discovery: the aliens have the ability to control their own consciousness, allowing them to switch between different states of being at will.
+
+But as you begin to delve deeper into the intricacies of the alien's neural patterns, you begin to notice strange inconsistencies in your own thought processes. It becomes clear that the aliens have somehow transferred their abilities to you, and now you must navigate the challenges and dangers of having complete control over your own consciousness.
+
+As you struggle to come to terms with your new abilities and the ethical implications of your research, you must also contend with a hostile government that sees your abilities as a threat to national security. Can you unlock the full potential of your newfound abilities and use them for the greater good, or will you succumb to the dangers and temptations of limitless consciousness?
+
+
+
+
+Yoonsuck Choe
+
+> Write a short story based on your prompt.
+
+As the lead neuroscientist on the team studying the newly discovered alien species, I was tasked with understanding the unique neural structures of their brains. After months of research, I made a groundbreaking discovery: the aliens had the ability to control their own consciousness, allowing them to switch between different states of being at will.
+
+At first, I was thrilled by this discovery. The implications were enormous, and I knew that this research would pave the way for incredible advances in the field of neuroscience. But as I began to delve deeper into the intricacies of the alien's neural patterns, I started to notice strange inconsistencies in my own thought processes.
+
+It wasn't long before I realized that the aliens had somehow transferred their abilities to me. I was now able to control my own consciousness, just like they could. At first, I was ecstatic. The possibilities were endless. I could focus on a task with laser-like precision, or enter a meditative state at will. I could even explore the vast landscape of my own mind, unlocking hidden memories and long-forgotten experiences.
+
+But as time went on, I began to realize the dangers of having complete control over my own consciousness. I started to experience vivid hallucinations and blackouts, and I found myself becoming increasingly detached from reality. I knew that I needed to find a way to reverse the effects of the alien's abilities, before it was too late.
+
+I tried to keep my condition a secret from my colleagues, but it wasn't long before they noticed the changes in my behavior. They were concerned, but I assured them that I was fine. I didn't want to lose my position as the lead neuroscientist on the team, or worse, be seen as a threat to national security.
+
+But as my condition worsened, it became clear that I couldn't keep it a secret any longer. I confided in one of my closest colleagues, and together, we set out to find a way to reverse the effects of the alien's abilities.
+
+It wasn't easy. We had to conduct dangerous experiments on ourselves, and we faced resistance from the government at every turn. But eventually, we succeeded in developing a treatment that allowed me to regain control of my consciousness.
+
+Now, I'm back to my old self, but I can't help but wonder what other secrets the alien's neural patterns hold. I know that I have to tread carefully, but I'm determined to ....
+
+> Note (Yoonsuck Choe): it stopped here. :-(
