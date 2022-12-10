@@ -30,7 +30,7 @@ I got OpenAI's ChatGPT to generate some short and useful programs. The prompt us
 
 * [gaussian.py](gaussian.py) : animated sampling from 2D normal distribution
 * [gaussian2.py](gaussian2.py) : same as above, but closer to what I intended
-* [pickpixek.py](pickpixel.py) : click on image and report pixel coordinate
+* [pickpixel.py](pickpixel.py) : click on image and report pixel coordinate
 * [timestamp.gs](timestamp.gs) : Google doc app script to insert timestamp into the document.
 
 Here's an example:
