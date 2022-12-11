@@ -3,6 +3,7 @@
 ## Contents:
 1. [12/09/2022: Infants brought up in a 4D VR world](#12092022-infants-brought-up-in-a-4d-vr-world-chatgpt)
 1. [12/09/2022: Neuroscience and alien consciousness: ChatGPT creates its own prompt and writes a story](#12092022-neuroscience-and-alien-consciousness-chatgpt-creates-its-own-prompt-and-writes-a-story-chatgpt)
+1. [12/11/2022: Short science fiction story in Klingon language](#12112022-short-science-fiction-story-in-klingon-language-chatgpt)
 
 ## 12/09/2022: Infants brought up in a 4D VR world (ChatGPT)
 
