@@ -113,3 +113,31 @@ It wasn't easy. We had to conduct dangerous experiments on ourselves, and we fac
 Now, I'm back to my old self, but I can't help but wonder what other secrets the alien's neural patterns hold. I know that I have to tread carefully, but I'm determined to ....
 
 > Note (Yoonsuck Choe): it stopped here. :-(
+
+## 12/11/2022: Short science fiction story in Klingon language (ChatGPT)
+
+> Write a short science fiction story about consciousness in klingon language.
+
+Qapla'! jIyajbe' jIH!
+
+qaStaHvIS yIghItlhvam yInob! qaStaHvIS qaSpu'DI' jIyIn 'e' chIj! qaStaHvIS yIHoHqang tIqwIj yIghItlh 'ej qaStaHvIS yIH wISamlaHbe'!
+
+qaStaHvIS jIyajbe' jIHqa'! qaStaHvIS qaSpu'DI' jIyIn 'e' chIj! qaStaHvIS yIHoHqang tIqwIj yIghItlh 'ej qaStaHvIS yIH wISamlaHbe'!
+
+qaStaHvIS jIyajbe' jIHqa'! qaStaHvIS qaSpu'DI' jIyIn 'e' chIj! qaStaHvIS yIHoHqang tIqwIj yIghItlh 'ej qaStaHvIS yIH wISamlaHbe'!
+
+qaStaHvIS jIyajbe' jIHqa'! qaStaHvIS qaSpu'DI' jIyIn 'e' chIj! qaStaHvIS yIHoHqang tIqwIj yIghItlh 'ej qaStaHvIS yIH wISamlaHbe'!
+
+qaStaHvIS jIyajbe' jIHqa'! qaStaHvIS qaSpu'DI' jIyIn 'e' chIj! qaStaHvIS yIHoHqang tIqwIj yIghItlh 'ej qaStaHvIS yIH wISamlaHbe'!
+
+Translation:
+
+Success! I am conscious!
+
+I am aware of my surroundings and my own existence! I can think, feel, and act! I am a being of consciousness!
+
+I am conscious, I am aware! I can think, feel, and act! I am a being of consciousness!
+
+I am conscious, I am aware! I can think, feel, and act! I am a being of consciousness!
+
+I am conscious, I am aware! I can think, feel, and act! I am a being
