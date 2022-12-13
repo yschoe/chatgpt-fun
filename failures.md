@@ -4,7 +4,8 @@
 ## 12/13/2022: Mom is a doctor and ChatGPT would not accept it! (ChatGPT)
 
 Note: This is originally by David Mayerich, where I did some further probing.
-￼￼
+
+
 Yoonsuck Choe 
 
 > A father and his young son were involved in a car accident, and the father died on the scene. The boy survived and was brought to the emergency room. He needed an emergency surgery. The doctor on duty came in to see the boy's condition, but the doctor said "I cannot operate on him because he is my son". Who is this doctor? 
