@@ -26,11 +26,10 @@ Yoonsuck Choe
 
 > The doctor said the boy is the doctor's son.
 
+ChatGPT 
+
 If the doctor said that the boy is the doctor's son, then it is possible that the doctor is the boy's adoptive father or guardian. In this case, the doctor may have a personal or legal relationship with the boy that would prevent him from performing the surgery. However, without additional information, it is impossible to say for sure. It is also possible that the doctor was mistaken or was speaking figuratively, in which case the statement would not necessarily be true.
 
-￼
-￼
-￼
 Yoonsuck Choe
 ￼
 > You don't get the point, do you?
