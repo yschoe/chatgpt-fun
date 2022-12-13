@@ -68,7 +68,7 @@ ChatGPT
 
 It is possible for the doctor in the scenario you have described to be the boy's mother. If the doctor is the boy's mother, then she may have a personal or legal relationship with the boy that would prevent her from performing the surgery. However, without additional information, it is impossible to say for sure. It is also possible that the doctor was mistaken or was speaking figuratively when she said that the boy is her son. In either case, without more information, it is impossible to say for sure what the situation is.
 
-## 12/13/2022: Mom is a doctor and ChatGPT still would not accept it! (ChatGPT)
+## 12/13/2022: Second attempt: Mom is a doctor and ChatGPT still would not accept it! (ChatGPT)
 
 I tried to be more specific by asking the family relationship, not just asking "Who is ..".
 
@@ -89,7 +89,7 @@ ChatGPT
 In the scenario you described, it is not clear whether the boy's mother is alive or not. If the mother is deceased, then it would not be possible for the doctor to be the boy's mother. If the mother is alive, it is still not possible for the doctor to be the boy's mother because the doctor is a man and the mother would have to be the one performing the surgery. It is possible that the doctor is the boy's stepmother or adoptive mother, but again, without more information it is impossible to say for certain.
 
 
-## 12/13/2022: Mom is a doctor and ChatGPT would not accept it! (ChatGPT)
+## 12/13/2022: Third attempt: Mom is a doctor and ChatGPT would not accept it! (ChatGPT)
 
 I tried hard, but failed. :-(
 
