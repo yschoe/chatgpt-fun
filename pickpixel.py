@@ -50,7 +50,7 @@ import tkinter as tk
 from PIL import Image, ImageTk
 
 # Set the name of the image file to be loaded
-filename = "image.png"
+filename = "img/image.png"
 
 # Load the image file and create a Tkinter PhotoImage object
 root = tk.Tk() # Yoonsuck Choe - This was moved here from below
