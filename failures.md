@@ -13,7 +13,7 @@ Yoonsuck Choe
 ChatGPT
 
 It is not possible to determine who the doctor is in the scenario you have described. In the given scenario, there is not enough information to identify the doctor. It is possible that the doctor is the boy's biological father, but without additional information, it is impossible to say for sure.
-￼
+
 Yoonsuck Choe 
 
 > No, the doctor is not the boy's biological father.
