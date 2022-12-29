@@ -1,11 +1,15 @@
 '''
 12/29/2022
 
-Prompt:
-Change it so that the "initial_time" can be given in a text entry box, and add a quit button.
+Prompt 1: Write a python code for a timer, with a simple graphical user interface where the user can click on the time duration.
+... see timer.py
 
-ChatGPT:
-To allow the user to specify the initial time in a text entry box, you can modify the code as follows:
+Prompt 2: Make it a countdown timer, where the initial time can be specified.
+... see timer2.py
+
+Prompt 3: Change it so that the "initial_time" can be given in a text entry box, and add a quit button.
+
+ChatGPT: To allow the user to specify the initial time in a text entry box, you can modify the code as follows:
 
 '''
 

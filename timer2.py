@@ -1,7 +1,11 @@
 '''
 12/29/2022
 
-Prompt: Make it a countdown timer, where the initial time can be specified.
+Prompt 1: Write a python code for a timer, with a simple graphical user interface where the user can click on the time duration.
+
+... see timer.py
+
+Prompt 2: Make it a countdown timer, where the initial time can be specified.
 
 ChatGPT: To make the timer a countdown timer, you can modify the code as follows:
 
