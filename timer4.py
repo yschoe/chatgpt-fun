@@ -70,6 +70,7 @@ class Timer:
             if self.time < 0:
                 self.time = 0
                 self.running = False
+                winsound.PlaySound("timer.wav", winsound.SND_FILENAME)
             minutes, seconds = divmod(self.time, 60)
             time_string = f"{minutes}:{seconds:02d}"
             self.time_label.config(text=time_string)

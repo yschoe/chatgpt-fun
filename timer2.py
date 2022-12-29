@@ -9,7 +9,11 @@ Prompt 2: Make it a countdown timer, where the initial time can be specified.
 
 ChatGPT: To make the timer a countdown timer, you can modify the code as follows:
 
-ChatGPT: This code creates a countdown timer with a GUI that consists of a label to display the time, and three buttons to start, stop, and reset the timer. The timer is initialized to the specified initial time, and is decremented every second while the running flag is True. The time is displayed in minutes and seconds, and the timer
+ChatGPT: This code creates a countdown timer with a GUI that consists
+of a label to display the time, and three buttons to start, stop, and
+reset the timer. The timer is initialized to the specified initial time,
+and is decremented every second while the running flag is True. The time
+is displayed in minutes and seconds, and the timer
 
 '''
 
