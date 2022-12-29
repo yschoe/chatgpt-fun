@@ -14,6 +14,7 @@ ChatGPT: To allow the user to specify the initial time in a text entry box, you 
 '''
 
 import tkinter as tk
+import winsound
 
 class Timer:
     def __init__(self, parent):
