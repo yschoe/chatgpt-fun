@@ -17,6 +17,9 @@ import tkinter as tk
 import winsound
 
 class Timer:
+
+    incr = 1 #YC
+
     def __init__(self, parent):
         # Create a label to display the time
         self.time_label = tk.Label(parent, text="0:00", font=("Helvetica", 48))
@@ -51,26 +54,32 @@ class Timer:
     def start(self):
         # Start the timer if it is not already running
         if not self.running:
-            self.running = True
+            self.running = True 
             self.time = self.parse_time(self.initial_time_entry.get())
             self.update_time()
     
     def stop(self):
         # Stop the timer if it is running
+        self.incr = 1 #YC
+        self.time_label.config(fg='black') #YC
         self.running = False
     
     def reset(self):
         # Reset the timer to the initial time
+        self.incr = 1 #YC
+        self.time_label.config(fg='black') #YC
         self.time = self.parse_time(self.initial_time_entry.get())
         self.time_label.config(text=self.initial_time_entry.get())
     
     def update_time(self):
         # Decrement the timer and update the time label
         if self.running:
-            self.time -= 1
+            self.time -= self.incr
             if self.time < 0:
-                self.time = 0
-                self.running = False
+                self.time = 1
+                self.incr = -1 #YC
+                self.time_label.config(fg='red') #YC
+                #self.running = False #YC
                 winsound.PlaySound("timer.wav", winsound.SND_FILENAME)
             minutes, seconds = divmod(self.time, 60)
             time_string = f"{minutes}:{seconds:02d}"
