@@ -76,11 +76,11 @@ class Timer:
         if self.running:
             self.time -= self.incr
             if self.time < 0:
+                winsound.PlaySound("timer.wav", winsound.SND_FILENAME)
                 self.time = 1
                 self.incr = -1 #YC
                 self.time_label.config(fg='red') #YC
                 #self.running = False #YC
-                winsound.PlaySound("timer.wav", winsound.SND_FILENAME)
             minutes, seconds = divmod(self.time, 60)
             time_string = f"{minutes}:{seconds:02d}"
             self.time_label.config(text=time_string)
@@ -94,6 +94,7 @@ class Timer:
 # Create the main window
 root = tk.Tk()
 root.title("Countdown Timer")
+root.geometry("300x250") # YC
 
 # Create an instance of the Timer class and pack it into the main window
 timer = Timer(root)
