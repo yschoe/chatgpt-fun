@@ -20,30 +20,37 @@ class Timer:
 
     incr = 1 #YC
 
-    def __init__(self, parent):
+    def __init__(self, root):
+
         # Create a label to display the time
-        self.time_label = tk.Label(parent, text="0:00", font=("Helvetica", 48))
+        self.time_label = tk.Label(root, text="0:00", font=("Helvetica", 48))
         self.time_label.pack()
         
         # Create a text entry box for the initial time
-        self.initial_time_entry = tk.Entry(parent)
+        self.initial_time_entry = tk.Entry(root)
         self.initial_time_entry.pack()
         
+        # Create frame 
+        self.frame = tk.Frame(root)
+        self.frame.pack() 
+
+        parent = self.frame
+        self.parent = parent
         # Create a start button
         self.start_button = tk.Button(parent, text="Start", command=self.start)
-        self.start_button.pack()
+        self.start_button.pack(side="left")
         
         # Create a stop button
         self.stop_button = tk.Button(parent, text="Stop", command=self.stop)
-        self.stop_button.pack()
+        self.stop_button.pack(side="left")
         
         # Create a reset button
         self.reset_button = tk.Button(parent, text="Reset", command=self.reset)
-        self.reset_button.pack()
+        self.reset_button.pack(side="left")
         
         # Create a quit button
-        self.quit_button = tk.Button(parent, text="Quit", command=parent.destroy)
-        self.quit_button.pack()
+        self.quit_button = tk.Button(parent, text="Quit", command=exit)
+        self.quit_button.pack(side="left")
         
         # Set the timer to 0
         self.time = 0
@@ -94,7 +101,7 @@ class Timer:
 # Create the main window
 root = tk.Tk()
 root.title("Countdown Timer")
-root.geometry("300x250") # YC
+root.geometry("300x150") # YC
 
 # Create an instance of the Timer class and pack it into the main window
 timer = Timer(root)

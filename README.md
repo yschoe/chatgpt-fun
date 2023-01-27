@@ -4,7 +4,8 @@ This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](
 
 ## News
 
-* 12/29/2022: Timer app: [timer3.py](timer3.py)
+* 01/27/2023: Drawing app: [draw.py](draw.py)
+* 12/29/2022: Timer app: [timer4.py](timer4.py)
 * 12/13/2022: Failure cases: [failures.md](failures.md)
 * 12/09/2022: Short stories: [stories.md](stories.md)
 * 12/08/2022: Conversation session dump generation (HTML, MD): [session-dump-howto.md](session-dump-howto.md)
@@ -41,6 +42,8 @@ I got OpenAI's ChatGPT to generate some short and useful programs. The prompt us
 * [timer.py](timer.py) : Timer app (incorrect 1st try)
 * [timer2.py](timer2.py) : Timer app (correct but lacking features)
 * [timer3.py](timer3.py) : Timer app (close to complete)
+* [timer4.py](timer4.py) : Timer app (final, with manual edits)
+* [draw.py](draw.py) : Free drawing app
 
 Here's an example:
 
