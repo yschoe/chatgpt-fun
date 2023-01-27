@@ -48,5 +48,6 @@ I got OpenAI's ChatGPT to generate some short and useful programs. The prompt us
 Here's an example:
 
 ![example session](img/example-session.png)
+![example session2](img/example-session2.png)
 
 Enjoy!
