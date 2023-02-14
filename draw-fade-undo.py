@@ -9,6 +9,7 @@ and several iterations later, adding undo feature, and some manual edits,
 here's the final version. 
 
 Ctrl-f to save screenshot file and fade out existing drawing.
+Ctrl-z to undo : this is very primitive -- will undo fixed number of points 
 Ctrl-q to quit 
 
 Yoonsuck Choe
