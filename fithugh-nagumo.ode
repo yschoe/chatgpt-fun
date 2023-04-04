@@ -1,0 +1,60 @@
+# 
+# Prompt: Do you know Bard Ermentrout's xppaut ode solver?
+# 
+# ChatGPT:
+# 
+# Yes, I'm familiar with the XPPAUT software developed by Bard
+# Ermentrout. XPPAUT is a tool for simulating dynamical systems described by
+# ordinary differential equations (ODEs). It provides an interface for the
+# user to define the equations, specify initial conditions and parameters,
+# and solve the system numerically.
+# 
+# XPPAUT includes a wide range of features such as bifurcation
+# analysis, time series analysis, phase plane analysis, and fast Fourier
+# transforms. It also has the ability to generate graphs and animations
+# to visualize the results of the simulations.
+# 
+# Overall, XPPAUT is a powerful and versatile tool for studying dynamical
+# systems, and has been used extensively in the fields of biology, physics,
+# and engineering.
+# 
+# 
+# Prompt: Can you write xppaut code to simulate a Fitzhough-Nagumo
+# oscillator and show the phase plot?
+#
+# Fitzhugh-Nagumo Oscillator
+# dx/dt = -y + x - x^3
+# dy/dt = (1/epsilon)*(x + a - b*y)
+
+# Define the variables and parameters
+x = -1.5, 1.5, -1, 1, 0.1
+y = -0.5, 1.5, -0.5, 1.5, 0.1
+a = 0.7
+b = 0.8
+epsilon = 0.01
+
+# Define the ODE system
+xdot = -y + x - x^3
+ydot = (1/epsilon)*(x + a - b*y)
+
+# Define the initial conditions
+init = -1.2, 0.5
+
+# Set the simulation parameters
+tstep = 0.01
+tmax = 50
+
+# Set up the phase plot
+@xp phaseplane 1 2
+
+# Set up the time series plot
+@xp time 1
+
+# Solve the ODE system and plot the results
+@ode ode1
+@labels Time x y
+@bounds 0 0 0
+@ticks 10 10
+@run [email protected], tmax, tstep
+
+
