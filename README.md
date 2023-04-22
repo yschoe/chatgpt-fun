@@ -4,7 +4,7 @@ This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](
 
 ## News
 
-* 04/22/2023: GAN demo [https://github.com/yschoe/gan-demo](gan-demo Repo)
+* 04/22/2023: GAN demo [GAN demo (repo)](https://github.com/yschoe/gan-demo)
 * 02/16/2023: Draw and fade out app: [draw-fade-undo.py](draw-fade-undo.py)
 * 01/27/2023: Drawing app: [draw.py](draw.py)
 * 12/29/2022: Timer app: [timer4.py](timer4.py)
