@@ -4,6 +4,8 @@ This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](
 
 ## News
 
+* 10/21/2023: Counting loops in a graph [loop.py](loop.py)
+* 10/21/2023: Simple 2D forager [nav.py](nav.py)
 * 04/22/2023: GAN demo [GAN demo (repo)](https://github.com/yschoe/gan-demo)
 * 02/16/2023: Draw and fade out app: [draw-fade-undo.py](draw-fade-undo.py)
 * 01/27/2023: Drawing app: [draw.py](draw.py)

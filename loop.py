@@ -1,6 +1,8 @@
 # Generated with ChatGPT
 # Here's the full prompt that led to this version.
 #   https://chat.openai.com/share/813580a4-244c-4fb9-a8bf-8ca9bc9757c8
+#
+
 import numpy as np
 import random
 import networkx as nx
