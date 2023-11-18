@@ -2,7 +2,9 @@
 
 '''
 
-  The series of prompt can be found here.
+  The series of prompts can be found here.
+
+  https://chat.openai.com/share/3643e4c9-4415-4441-85bd-e0b91d80a96c
 
 '''
 
