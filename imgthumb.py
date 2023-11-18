@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+'''
+
+  The series of prompt can be found here.
+
+'''
+
 import sys
 from PIL import Image, ImageDraw, ImageFont
 import os
