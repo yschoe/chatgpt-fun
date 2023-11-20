@@ -12,6 +12,8 @@ Ctrl-f to save screenshot file and fade out existing drawing.
 Ctrl-z to undo : this is very primitive -- will undo fixed number of points 
 Ctrl-q to quit 
 
+Here's the full prompt: https://chat.openai.com/share/0f81a0bd-69c8-4c10-ab76-92017d9d8df7
+
 Yoonsuck Choe
 
 '''

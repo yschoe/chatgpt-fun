@@ -12,6 +12,13 @@ import sys
 from PIL import Image, ImageDraw, ImageFont
 import os
 import math
+import string
+
+def sanitize_filename(filename):
+    """Remove foreign characters from the filename."""
+    valid_chars = "-_.() %s%s" % (string.ascii_letters, string.digits)
+    sanitized_filename = ''.join(c for c in filename if c in valid_chars)
+    return sanitized_filename
 
 def truncate_filename(filename, max_length=30):
     """Truncate filename if longer than max_length."""
@@ -73,10 +80,13 @@ def create_photo_index(image_files, output_folder='photo_index', thumbnail_size=
             # Get the filename without extension
             filename = os.path.splitext(os.path.basename(image_file))[0]
 
-            # Truncate filename if longer than max_filename_length
-            truncated_filename = truncate_filename(filename, max_filename_length)
+            # Sanitize filename
+            sanitized_filename = sanitize_filename(filename)
 
-            # Draw the truncated filename as an overlay on top of the thumbnail
+            # Truncate filename if longer than max_filename_length
+            truncated_filename = truncate_filename(sanitized_filename, max_filename_length)
+
+            # Draw the sanitized and truncated filename as an overlay on top of the thumbnail
             text_position = (position[0] + 5, position[1] + 5)
             draw.text(text_position, truncated_filename, font=font, fill='black')
 
@@ -103,4 +113,3 @@ if __name__ == "__main__":
 
     # Create the photo index
     create_photo_index(image_files, output_folder, thumbnail_size, rows, cols, max_filename_length)
-
