@@ -1,5 +1,5 @@
 '''
-Initially made with Clause, fixed with ChatGPT
+Initially made with Claude, fixed with ChatGPT
 
 
 Claude prompt:
