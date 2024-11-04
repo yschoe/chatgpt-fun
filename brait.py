@@ -296,13 +296,17 @@ class BraitenbergSimulation:
                         if not self.show_trajectory:
                             for vehicle in self.vehicles:
                                 vehicle.trajectory.clear()
-                    
+                    elif event.key == pygame.K_l:
+                        # Toggle light for each vehicle
+                        for vehicle in self.vehicles:
+                            vehicle.has_light = not vehicle.has_light
+    
             for vehicle in self.vehicles:
                 self.update_vehicle(vehicle)
-            
+    
             self.draw()
             self.clock.tick(60)
-        
+    
         pygame.quit()
 
 def main():
