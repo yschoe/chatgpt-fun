@@ -79,6 +79,9 @@ class Light:
         self.intensity = intensity
 
 class BraitenbergSimulation:
+
+    vlight_status = None 
+
     def __init__(self, width=800, height=600):
         pygame.init()
         self.width = width
@@ -235,7 +238,11 @@ class BraitenbergSimulation:
             pygame.draw.circle(self.screen, (255, 255, 0), 
                                (int(light.x), int(light.y)), 10)
     
+        vhas_light = False
         for vehicle in self.vehicles:
+
+            vhas_light = vehicle.has_light
+
             # Skip drawing if vehicle is too close to the boundary
             if (vehicle.x < 10 or vehicle.x > self.width - 10 or 
                 vehicle.y < 10 or vehicle.y > self.height - 10):
@@ -277,7 +284,8 @@ class BraitenbergSimulation:
     
         font = pygame.font.Font(None, 24)
         trajectory_status = "ON" if self.show_trajectory else "OFF"
-        text = font.render(f"Trajectory: {trajectory_status} (Toggle: T); Quit: ESC", True, (255, 255, 255))
+        vlight_status = "ON" if vhas_light  else "OFF"
+        text = font.render(f"Trajectory: {trajectory_status} (Toggle: T); Vehicle Light: {vlight_status} (Toggle: l); Quit: ESC", True, (255, 255, 255))
         self.screen.blit(text, (10, 10))
     
         pygame.display.flip()
@@ -298,6 +306,7 @@ class BraitenbergSimulation:
                                 vehicle.trajectory.clear()
                     elif event.key == pygame.K_l:
                         # Toggle light for each vehicle
+                        self.vlight_status = True
                         for vehicle in self.vehicles:
                             vehicle.has_light = not vehicle.has_light
     
