@@ -1,6 +1,7 @@
 '''
 Initially made with Clause, fixed with ChatGPT
 
+
 Claude prompt:
   YC
 Write a code in python to simulate the braitenberg vehicle. Make it possible to specify in the environment the following. 
@@ -66,9 +67,10 @@ class Vehicle:
     connections: List[Tuple[str, str]] = None
     has_light: bool = False
     trajectory: deque = None
+    vtype = None # True = attractive, False = repulsive
     
     def __post_init__(self):
-        self.trajectory = deque(maxlen=100)
+        self.trajectory = deque(maxlen=200)
 
 class Light:
     def __init__(self, x: float, y: float, intensity: float = 1000):
@@ -166,8 +168,10 @@ class BraitenbergSimulation:
         if vehicle.connections == [('ls', 'lw'), ('rs', 'rw')]:  # Attraction
             left_wheel *= 3.0
             right_wheel *= 3.0
+            vehicle.vtype = True
         elif vehicle.connections == [('ls', 'rw'), ('rs', 'lw')]:  # Repulsion
             left_wheel, right_wheel = right_wheel, left_wheel
+            vehicle.vtype = False
     
         # Normalize wheel speeds for smoother movement
         max_wheel_speed = max(abs(left_wheel), abs(right_wheel), 1)
@@ -245,7 +249,11 @@ class BraitenbergSimulation:
                 (vehicle.x + math.cos(vehicle.angle - 2.4) * vehicle.size/2,
                  vehicle.y + math.sin(vehicle.angle - 2.4) * vehicle.size/2),
             ]
-            pygame.draw.polygon(self.screen, (0, 255, 0), points)
+            if vehicle.vtype:
+                pygame.draw.polygon(self.screen, (0, 255, 0), points)
+            else:
+                pygame.draw.polygon(self.screen, (255, 0, 0), points)
+
             
             sensor_offset = vehicle.size / 2
             left_sensor_pos = (
@@ -268,7 +276,7 @@ class BraitenbergSimulation:
         
         font = pygame.font.Font(None, 24)
         trajectory_status = "ON" if self.show_trajectory else "OFF"
-        text = font.render(f"Trajectory: {trajectory_status} (Toggle: T)", True, (255, 255, 255))
+        text = font.render(f"Trajectory: {trajectory_status} (Toggle: T); Quit: ESC", True, (255, 255, 255))
         self.screen.blit(text, (10, 10))
         
         pygame.display.flip()
@@ -297,7 +305,7 @@ class BraitenbergSimulation:
         pygame.quit()
 
 def main():
-    parser = argparse.ArgumentParser(description='Braitenberg Vehicle Simulation')
+    parser = argparse.ArgumentParser(description='Braitenberg Vehicle Simulation') # \n usage: python brait.py -l 5 ls-rw:rs-lw ls-lw:rs-rw')
     parser.add_argument('configs', nargs='+', help='Vehicle configurations (e.g., ls-lw:rs-rw)')
     parser.add_argument('-l', '--lights', type=int, default=3, 
                         help='Number of standalone lights')
