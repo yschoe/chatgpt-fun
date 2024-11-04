@@ -4,6 +4,8 @@ This is a series of interactions with OpenAI's ChatGPT [http://chat.openai.com](
 
 ## News
 
+* 11/04/2024: Braitenberg vehicle (need to fix bug) [brait.py](brait.py) (made with Claude, debugged with ChatGPT)
+* 11/04/2024: FOL unify function [unify.py](unify.py) (made with Claude)
 * 06/23/2024: Showing stereo photos from a list of images [stereo-view.py](stereo-view.py)
 * 10/21/2023: Counting loops in a graph [loop.py](loop.py)
 * 10/21/2023: Simple 2D forager [nav.py](nav.py)
