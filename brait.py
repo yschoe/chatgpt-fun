@@ -200,64 +200,6 @@ class BraitenbergSimulation:
             vehicle.trajectory.clear()
 
 
-    ''' this is the old version with incorrect repulsion behavior '''
-    def update_vehicle2(self, vehicle: Vehicle):
-        """Update vehicle position and orientation based on sensor values."""
-        left_value, right_value = self.calculate_sensor_values(vehicle)
-        vehicle.left_sensor = left_value
-        vehicle.right_sensor = right_value
-    
-        # Calculate wheel speeds based on connections for attraction or repulsion
-        left_wheel = 0
-        right_wheel = 0
-    
-        for sensor, wheel in vehicle.connections:
-            sensor_value = left_value if sensor == 'ls' else right_value
-            if wheel == 'lw':
-                left_wheel += sensor_value
-            else:  # 'rw'
-                right_wheel += sensor_value
-    
-        # Attraction: scale wheel speeds directly; Repulsion: invert sensor-wheel mapping
-        if vehicle.connections == [('ls', 'lw'), ('rs', 'rw')]:  # Attraction
-            left_wheel *= 3.0
-            right_wheel *= 3.0
-            vehicle.vtype = True
-        elif vehicle.connections == [('ls', 'rw'), ('rs', 'lw')]:  # Repulsion
-            left_wheel, right_wheel = right_wheel, left_wheel
-            vehicle.vtype = False
-    
-        # Normalize wheel speeds for smoother movement
-        max_wheel_speed = max(abs(left_wheel), abs(right_wheel), 1)
-        left_wheel /= max_wheel_speed
-        right_wheel /= max_wheel_speed
-    
-        # Update position and angle
-        average_speed = (left_wheel + right_wheel) * vehicle.speed / 2
-        angular_velocity = (right_wheel - left_wheel) * vehicle.speed / vehicle.size * 50
-    
-        # Adjust angle scaling for responsiveness
-        vehicle.angle += angular_velocity * 0.15
-        vehicle.x += math.cos(vehicle.angle) * average_speed
-        vehicle.y += math.sin(vehicle.angle) * average_speed
-    
-        # Store position for trajectory
-        vehicle.trajectory.append((int(vehicle.x), int(vehicle.y)))
-
-        # book keeping 
-        vx = vehicle.x
-        vy = vehicle.y 
-
-        # Wrap around screen
-        vehicle.x = vehicle.x % self.width
-        vehicle.y = vehicle.y % self.height
-
-        # clear trajectory when wrapped around
-        if (abs(vx-vehicle.x)>(self.width-10) or 
-            abs(vy-vehicle.y)>(self.height-10)): 
-           vehicle.trajectory.clear()
-
-
 
     # Rest of the class implementation remains the same
     def add_vehicle(self, x: float, y: float, connections_str: str, has_light: bool = False):
