@@ -145,9 +145,62 @@ class BraitenbergSimulation:
                 right_value += self.calculate_sensor_response(right_dist, vehicle_intensity)
         
         return left_value, right_value
-    
-
+ 
     def update_vehicle(self, vehicle: Vehicle):
+        """Update vehicle position and orientation based on sensor values."""
+        left_value, right_value = self.calculate_sensor_values(vehicle)
+        vehicle.left_sensor = left_value
+        vehicle.right_sensor = right_value
+    
+        # Calculate wheel speeds based on connections for attraction or repulsion
+        left_wheel = 0
+        right_wheel = 0
+    
+        for sensor, wheel in vehicle.connections:
+            sensor_value = left_value if sensor == 'ls' else right_value
+            if wheel == 'lw':
+                left_wheel += sensor_value
+            else:  # 'rw'
+                right_wheel += sensor_value
+    
+        # Adjust wheel behavior based on vehicle type (attractive or repulsive)
+        if vehicle.connections == [('ls', 'lw'), ('rs', 'rw')]:  # Attraction
+            left_wheel *= 3.0
+            right_wheel *= 3.0
+            vehicle.vtype = True
+        elif vehicle.connections == [('ls', 'rw'), ('rs', 'lw')]:  # Repulsion
+            # Invert and scale down values for repulsive effect
+            left_wheel = -right_value * 3.0
+            right_wheel = -left_value * 3.0
+            vehicle.vtype = False
+    
+        # Normalize wheel speeds for smoother movement
+        max_wheel_speed = max(abs(left_wheel), abs(right_wheel), 1)
+        left_wheel /= max_wheel_speed
+        right_wheel /= max_wheel_speed
+    
+        # Update position and angle
+        average_speed = (left_wheel + right_wheel) * vehicle.speed / 2
+        angular_velocity = (right_wheel - left_wheel) * vehicle.speed / vehicle.size * 50
+    
+        # Adjust angle scaling for responsiveness
+        vehicle.angle += angular_velocity * 0.15
+        vehicle.x += math.cos(vehicle.angle) * average_speed
+        vehicle.y += math.sin(vehicle.angle) * average_speed
+    
+        # Store position for trajectory
+        vehicle.trajectory.append((int(vehicle.x), int(vehicle.y)))
+    
+        # Bookkeeping and wrap-around
+        vx, vy = vehicle.x, vehicle.y
+        vehicle.x = vehicle.x % self.width
+        vehicle.y = vehicle.y % self.height
+    
+        if abs(vx - vehicle.x) > (self.width - 10) or abs(vy - vehicle.y) > (self.height - 10):
+            vehicle.trajectory.clear()
+
+
+    def update_vehicle2(self, vehicle: Vehicle):
         """Update vehicle position and orientation based on sensor values."""
         left_value, right_value = self.calculate_sensor_values(vehicle)
         vehicle.left_sensor = left_value
