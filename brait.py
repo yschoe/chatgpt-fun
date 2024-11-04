@@ -200,6 +200,7 @@ class BraitenbergSimulation:
             vehicle.trajectory.clear()
 
 
+    ''' this is the old version with incorrect repulsion behavior '''
     def update_vehicle2(self, vehicle: Vehicle):
         """Update vehicle position and orientation based on sensor values."""
         left_value, right_value = self.calculate_sensor_values(vehicle)
@@ -281,57 +282,62 @@ class BraitenbergSimulation:
     
     def draw(self):
         self.screen.fill((0, 0, 0))  # Black background
-        
+    
         if self.show_trajectory:
             for vehicle in self.vehicles:
                 if len(vehicle.trajectory) > 1:
                     pygame.draw.lines(self.screen, (0, 100, 0), False, 
-                                   list(vehicle.trajectory), 1)
-        
+                                      list(vehicle.trajectory), 1)
+    
         for light in self.lights:
             pygame.draw.circle(self.screen, (255, 255, 0), 
-                             (int(light.x), int(light.y)), 10)
-        
+                               (int(light.x), int(light.y)), 10)
+    
         for vehicle in self.vehicles:
+            # Skip drawing if vehicle is too close to the boundary
+            if (vehicle.x < 10 or vehicle.x > self.width - 10 or 
+                vehicle.y < 10 or vehicle.y > self.height - 10):
+                continue
+    
             # Draw vehicle body
             points = [
                 (vehicle.x + math.cos(vehicle.angle) * vehicle.size,
                  vehicle.y + math.sin(vehicle.angle) * vehicle.size),
-                (vehicle.x + math.cos(vehicle.angle + 2.4) * vehicle.size/2,
-                 vehicle.y + math.sin(vehicle.angle + 2.4) * vehicle.size/2),
-                (vehicle.x + math.cos(vehicle.angle - 2.4) * vehicle.size/2,
-                 vehicle.y + math.sin(vehicle.angle - 2.4) * vehicle.size/2),
+                (vehicle.x + math.cos(vehicle.angle + 2.4) * vehicle.size / 2,
+                 vehicle.y + math.sin(vehicle.angle + 2.4) * vehicle.size / 2),
+                (vehicle.x + math.cos(vehicle.angle - 2.4) * vehicle.size / 2,
+                 vehicle.y + math.sin(vehicle.angle - 2.4) * vehicle.size / 2),
             ]
             if vehicle.vtype:
-                pygame.draw.polygon(self.screen, (0, 255, 0), points)
+                pygame.draw.polygon(self.screen, (0, 255, 0), points)  # Green for attractive
             else:
-                pygame.draw.polygon(self.screen, (255, 0, 0), points)
-
-            
+                pygame.draw.polygon(self.screen, (255, 0, 0), points)  # Red for repulsive
+    
+            # Draw sensors
             sensor_offset = vehicle.size / 2
             left_sensor_pos = (
-                int(vehicle.x + math.cos(vehicle.angle - math.pi/4) * sensor_offset),
-                int(vehicle.y + math.sin(vehicle.angle - math.pi/4) * sensor_offset)
+                int(vehicle.x + math.cos(vehicle.angle - math.pi / 4) * sensor_offset),
+                int(vehicle.y + math.sin(vehicle.angle - math.pi / 4) * sensor_offset)
             )
             right_sensor_pos = (
-                int(vehicle.x + math.cos(vehicle.angle + math.pi/4) * sensor_offset),
-                int(vehicle.y + math.sin(vehicle.angle + math.pi/4) * sensor_offset)
+                int(vehicle.x + math.cos(vehicle.angle + math.pi / 4) * sensor_offset),
+                int(vehicle.y + math.sin(vehicle.angle + math.pi / 4) * sensor_offset)
             )
-            
+    
             left_intensity = min(255, int(vehicle.left_sensor))
             right_intensity = min(255, int(vehicle.right_sensor))
             pygame.draw.circle(self.screen, (255, left_intensity, left_intensity), left_sensor_pos, 4)
             pygame.draw.circle(self.screen, (255, right_intensity, right_intensity), right_sensor_pos, 4)
-            
+    
             if vehicle.has_light:
                 pygame.draw.circle(self.screen, (255, 255, 0), 
-                                 (int(vehicle.x), int(vehicle.y)), 6)
-        
+                                   (int(vehicle.x), int(vehicle.y)), 6)
+    
         font = pygame.font.Font(None, 24)
         trajectory_status = "ON" if self.show_trajectory else "OFF"
         text = font.render(f"Trajectory: {trajectory_status} (Toggle: T); Quit: ESC", True, (255, 255, 255))
         self.screen.blit(text, (10, 10))
-        
+    
         pygame.display.flip()
     
     def run(self):
