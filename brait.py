@@ -1,6 +1,20 @@
 '''
 Initially made with Claude, fixed with ChatGPT
 
+Example usage:
+
+
+  python brait.py -l 5 -v ls-lw:rs-rw  ls-lw:rs-rw ls-lw:rs-rw ls-lw:rs-rw  ls-lw:rs-rw ls-lw:rs-rw ls-lw:rs-rw ls-rw:rs-lw ls-rw:rs-lw ls-rw:rs-lw ls-rw:rs-lw ls-rw:rs-lw ls-rw:rs-lw ls-rw:rs-lw
+
+  -l <n> : <n> random lights 
+  -v : turn on vehicle light 
+ 
+  ls-lw:rs-rw : attracted by light 
+  ls-rw:rs-lw : repulsed by light 
+
+  [t] : toggle trajectory
+  [l] : toggle vehicle light
+  [ESC] : exit
 
 Claude prompt:
   YC
