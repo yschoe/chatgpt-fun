@@ -1,5 +1,9 @@
 '''
+
 Initially made with Claude, fixed with ChatGPT
+
+  Inspired by Xbraitenberg, by Eddie Kohler
+  https://www.lcdf.org/xbraitenberg/
 
 Example usage:
 
