@@ -249,7 +249,11 @@ class BraitenbergSimulation:
         if self.show_trajectory:
             for vehicle in self.vehicles:
                 if len(vehicle.trajectory) > 1:
-                    pygame.draw.lines(self.screen, (0, 100, 0), False, 
+                    if (vehicle.vtype):
+                        vcolor=(0,100,0)
+                    else: 
+                        vcolor=(100,0,0)
+                    pygame.draw.lines(self.screen, vcolor, False, 
                                       list(vehicle.trajectory), 1)
     
         for light in self.lights:
