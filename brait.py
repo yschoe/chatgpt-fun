@@ -96,6 +96,10 @@ class Light:
         self.y = y
         self.intensity = intensity
 
+    def mod(self,dx,dy):
+        self.x = self.x + dx
+        self.y = self.y + dy
+
 class BraitenbergSimulation:
 
     vlight_status = None 
@@ -321,6 +325,18 @@ class BraitenbergSimulation:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         running = False
+                    elif event.key == pygame.K_LEFT:
+                        for light in self.lights:
+                            light.mod(-10,0)
+                    elif event.key == pygame.K_RIGHT:
+                        for light in self.lights:
+                            light.mod(10,0)
+                    elif event.key == pygame.K_UP:
+                        for light in self.lights:
+                            light.mod(0,-10)
+                    elif event.key == pygame.K_DOWN:
+                        for light in self.lights:
+                            light.mod(0,10)
                     elif event.key == pygame.K_t:
                         self.show_trajectory = not self.show_trajectory
                         if not self.show_trajectory:
