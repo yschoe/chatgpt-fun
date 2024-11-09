@@ -187,7 +187,11 @@ class BraitenbergSimulation:
                 left_wheel += sensor_value
             else:  # 'rw'
                 right_wheel += sensor_value
-    
+        if vehicle.connections == [('ls', 'lw'), ('rs', 'rw')]:  # Attraction
+            vehicle.vtype = False
+        else:
+            vehicle.vtype = True
+        '''    
         # Adjust wheel behavior based on vehicle type (attractive or repulsive)
         if vehicle.connections == [('ls', 'lw'), ('rs', 'rw')]:  # Attraction
             left_wheel *= 3.0
@@ -198,6 +202,7 @@ class BraitenbergSimulation:
             left_wheel = -right_value * 3.0
             right_wheel = -left_value * 3.0
             vehicle.vtype = False
+        '''
     
         # Normalize wheel speeds for smoother movement
         max_wheel_speed = max(abs(left_wheel), abs(right_wheel), 1)
