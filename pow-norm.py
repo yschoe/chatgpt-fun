@@ -4,7 +4,7 @@ from scipy.stats import halfnorm
 
 # Set parameters
 num_samples = 10000
-alpha = 10.0  # Power-law exponent (typically > 1)
+alpha = 3.0  # Power-law exponent (typically > 1)
 min_value = 0.001  # Lower bound for the power-law distribution
 
 # Generate samples from the half-normal distribution
@@ -45,8 +45,8 @@ bin_centers = 0.5 * (bin_edges[1:] + bin_edges[:-1])
 
 # Plot the histograms in log-log scale
 plt.figure(figsize=(12, 6))
-plt.plot(bin_centers, power_law_hist, color='red', label='Power-Law Distribution', alpha=0.7)
-plt.plot(bin_centers, half_normal_hist, color='blue', label='Scaled & Shifted Half-Normal Distribution', alpha=0.7)
+plt.plot(bin_centers, power_law_hist, marker="x", color='red', label='Power-Law Distribution', alpha=0.7)
+plt.plot(bin_centers, half_normal_hist, marker="x", color='blue', label='Scaled & Shifted Half-Normal Distribution', alpha=0.7)
 
 # Set both axes to log scale
 plt.xscale('log')
