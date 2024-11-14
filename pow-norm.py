@@ -1,10 +1,36 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import halfnorm
+import sys
+
+def find_inversions(A, B):
+    inversions = []
+
+    for i in range(len(A) - 1):
+        # Check if A[i] > B[i] and A[i+1] <= B[i+1]
+        if A[i] > B[i] and A[i+1] <= B[i+1]:
+            inversions.append(i)
+        # Check the opposite inversion: A[i] < B[i] and A[i+1] >= B[i+1]
+        elif A[i] < B[i] and A[i+1] >= B[i+1]:
+            inversions.append(i)
+
+    return inversions
+
+# Example usage:
+A = np.array([5, 4, 3, 2, 6, 7])
+B = np.array([1, 2, 3, 4, 5, 8])
+inversions = find_inversions(A, B)
+print("Inversion indices:", inversions)
 
 # Set parameters
-num_samples = 10000
-alpha = 3.0  # Power-law exponent (typically > 1)
+num_samples = 100000
+#alpha = 3.0  # Power-law exponent (typically > 1)
+# get alpha from the command line
+if len(sys.argv)<2:
+    print("usage: pow-norm.py <alpha>")
+    exit()
+else:
+    alpha = float(sys.argv[1])
 min_value = 0.001  # Lower bound for the power-law distribution
 
 # Generate samples from the half-normal distribution
