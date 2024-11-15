@@ -16,11 +16,13 @@ def find_inversions(A, B):
 
     return inversions
 
+'''
 # Example usage:
 A = np.array([5, 4, 3, 2, 6, 7])
 B = np.array([1, 2, 3, 4, 5, 8])
 inversions = find_inversions(A, B)
 print("Inversion indices:", inversions)
+'''
 
 # Set parameters
 num_samples = 100000
@@ -69,10 +71,15 @@ half_normal_hist, _ = np.histogram(half_normal_samples_scaled_shifted, bins=bins
 # Define bin centers for plotting
 bin_centers = 0.5 * (bin_edges[1:] + bin_edges[:-1])
 
+# find inversions
+inv_idx = find_inversions(power_law_hist, half_normal_hist)
+print("Inversion indices:", inv_idx)
+
 # Plot the histograms in log-log scale
 plt.figure(figsize=(12, 6))
 plt.plot(bin_centers, power_law_hist, marker="x", color='red', label='Power-Law Distribution', alpha=0.7)
 plt.plot(bin_centers, half_normal_hist, marker="x", color='blue', label='Scaled & Shifted Half-Normal Distribution', alpha=0.7)
+plt.plot(bin_centers[inv_idx], half_normal_hist[inv_idx], marker="o", color="green", linestyle='none', label='cross') 
 
 # Set both axes to log scale
 plt.xscale('log')
@@ -90,4 +97,5 @@ plt.legend()
 plt.title(f'Empirical Distributions: Power-Law vs. Scaled & Shifted Half-Normal (Log-Log Plot)\n'
           f'Std Dev (Power-Law): {power_law_std:.3f} | Std Dev (Scaled Half-Normal): {half_normal_std:.3f}')
 plt.show()
+
 
