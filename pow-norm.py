@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import halfnorm
 import sys
 
-def find_inversions(A, B):
+def find_inversions(A, B, idx):
     inversions = []
 
     for i in range(len(A) - 1):
@@ -14,6 +14,8 @@ def find_inversions(A, B):
         elif A[i] < B[i] and A[i+1] >= B[i+1]:
             inversions.append(i)
 
+    inv_idx = idx[inversions]
+    print(f"********** inversion bin location: {inv_idx}") 
     return inversions
 
 '''
@@ -72,14 +74,20 @@ half_normal_hist, _ = np.histogram(half_normal_samples_scaled_shifted, bins=bins
 bin_centers = 0.5 * (bin_edges[1:] + bin_edges[:-1])
 
 # find inversions
-inv_idx = find_inversions(power_law_hist, half_normal_hist)
+inv_idx = find_inversions(power_law_hist, half_normal_hist,bin_centers)
 print("Inversion indices:", inv_idx)
+
+l2_x = bin_centers[inv_idx[2]]
+l2_y = half_normal_hist[inv_idx[2]]
+
+print(f"L2: {alpha} {power_law_variance} {l2_x}")
 
 # Plot the histograms in log-log scale
 plt.figure(figsize=(12, 6))
 plt.plot(bin_centers, power_law_hist, marker="x", color='red', label='Power-Law Distribution', alpha=0.7)
 plt.plot(bin_centers, half_normal_hist, marker="x", color='blue', label='Scaled & Shifted Half-Normal Distribution', alpha=0.7)
 plt.plot(bin_centers[inv_idx], half_normal_hist[inv_idx], marker="o", color="green", linestyle='none', label='cross') 
+plt.plot([l2_x,l2_x], [0,l2_y], color="green", label=f"l2 = {l2_x}")
 
 # Set both axes to log scale
 plt.xscale('log')
