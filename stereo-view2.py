@@ -75,7 +75,7 @@ class ImageViewer(tk.Tk):
             scale_factor = target_height / img_height
 
         new_size = (int(img_width * scale_factor), int(img_height * scale_factor))
-        return image.resize(new_size, Image.ANTIALIAS)
+        return image.resize(new_size) #, Image.ANTIALIAS)
 
     def save_stereo_view(self, event):
         if self.index + 1 >= len(self.image_files):
