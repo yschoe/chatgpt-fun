@@ -147,7 +147,7 @@ class Critter:
         self.age += dt
         # update trail
         self.trail.append(self.pos)
-        if len(self.trail) > 100:
+        if len(self.trail) > 30:
             self.trail.pop(0)
 
     def can_reproduce(self):
@@ -213,7 +213,7 @@ class Simulation:
     def _mk_critter(self):
         return Critter(pos=Vec(random.uniform(0, self.w), random.uniform(0, self.h)),
                        vel=Vec(random.uniform(-1,1), random.uniform(-1,1)), energy=1.0,
-                       max_age=random.uniform(900, 2000), repro_threshold=1.1)
+                       max_age=random.uniform(300, 800), repro_threshold=1.1)
 
     def update(self, dt):
         if self.paused:
@@ -232,15 +232,16 @@ class Simulation:
         deaths = before - len(self.critters)
         self.env.nutrients = clamp(self.env.nutrients + 0.01 * deaths, 0.0, 1.0)
         self._reproduce()
-        self.env.water = clamp(self.env.water - 0.00001 * dt + 0.000005 * dt, 0.0, 1.0)
+        self.env.water = clamp(self.env.water - 0.0001 * dt + 0.00005 * dt, 0.0, 1.0)
         self.env.temp_c = 21.0 + 1.5 * math.sin(2*math.pi*self.env.light_phase)
 
     def _reproduce(self):
-        if len(self.critters) < self.args.animal_cap:
+        # do not reproduce if nutrient is too low
+        if self.algae.total_biomass() > 0.03 and len(self.critters) < self.args.animal_cap:
             random.shuffle(self.critters)
             for i in range(0, len(self.critters)-1, 2):
                 a, b = self.critters[i], self.critters[i+1]
-                if a.can_reproduce() and b.can_reproduce() and (a.pos - b.pos).length() < 12:
+                if a.can_reproduce() and b.can_reproduce() and (a.pos - b.pos).length() < 80:
                     child = self._mk_critter()
                     child.pos = (a.pos + b.pos) / 2
                     child.energy = 0.7
@@ -266,7 +267,7 @@ def main(argv=None):
     parser.add_argument('--tick-ms', type=int, default=50)
     parser.add_argument('--algae-init', type=float, default=0.20)
     parser.add_argument('--herbivores', type=int, default=80)
-    parser.add_argument('--animal-cap', type=int, default=200)
+    parser.add_argument('--animal-cap', type=int, default=300)
     args = parser.parse_args(argv)
 
     pygame.init()
