@@ -9,7 +9,7 @@ Enhancements:
 - Nutrients decay to zero if no producers exist.
 
 Run:
-  python terrarium_sim_pygame.py --width 900 --height 700 --herbivores 80 --animal-cap 300
+  python terrarium_sim_pygame.py --width 900 --height 700 --herbivores 80 --animal-cap 500
 """
 import argparse
 import math
@@ -148,7 +148,8 @@ class Critter:
         self.age += dt
         # update trail
         self.trail.append(self.pos)
-        if len(self.trail) > 30:
+        thresh = max(30/(dt*20),5)
+        if len(self.trail) > thresh:
             self.trail.pop(0)
 
     def can_reproduce(self):
@@ -306,7 +307,7 @@ def main(argv=None):
     parser.add_argument('--tick-ms', type=int, default=50)
     parser.add_argument('--algae-init', type=float, default=0.20)
     parser.add_argument('--herbivores', type=int, default=80)
-    parser.add_argument('--animal-cap', type=int, default=300)
+    parser.add_argument('--animal-cap', type=int, default=500)
     parser.add_argument('--pop-hist', type=int, default=600, help='samples kept for population plot')
     parser.add_argument('--pop-sample-every', type=float, default=0.5, help='sim seconds between pop samples')
     parser.add_argument('--pop-panel-w', type=int, default=240)
