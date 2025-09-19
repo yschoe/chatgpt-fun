@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """
+
+https://chatgpt.com/share/68ccb626-8c38-8005-b33c-563b9e43f28a
+
+includes population plot
+- adjusted reproduction rules to make population stabilize (no explosion, no extinction)
+
 Terrarium-in-a-bottle: a minimal sealed-ecosystem simulation with Pygame.
 
 Enhancements:
@@ -66,7 +72,7 @@ class AlgaeGrid:
 
     def grow(self, env: Environment, dt: float):
         light = env.light(0)
-        r_max = 0.3
+        r_max = 0.45
         total_before = self.total_biomass()
         for r in range(self.rows):
             for c in range(self.cols):
@@ -250,7 +256,7 @@ class Simulation:
         self.env.temp_c = 21.0 + 1.5 * math.sin(2*math.pi*self.env.light_phase)
 
     def _reproduce(self):
-        if self.algae.total_biomass() > 0.05 and len(self.critters) < self.args.animal_cap:
+        if self.algae.total_biomass() > 0.06 and len(self.critters) < self.args.animal_cap:
             random.shuffle(self.critters)
             for i in range(0, len(self.critters)-1, 2):
                 a, b = self.critters[i], self.critters[i+1]
