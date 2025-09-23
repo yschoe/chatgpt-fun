@@ -1,1 +1,4 @@
 scratch
+build
+dist
+*.spec
