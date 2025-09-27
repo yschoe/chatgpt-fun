@@ -1,0 +1,149 @@
+#!/usr/bin/env bash
+# Memory-friendly multi-clip concat with -filter_complex.
+# Opens the input once per interval with -ss/-t, then concat.
+# Usage:
+#   vidclip input.mp4 --intervals "00:00-08:56,10:13-10:29,16:00-17:30,22:22-26:34" [-o out.mp4] [--crf 18] [--preset medium] [--threads 2] [--dry-run] [--debug]
+
+# (intentionally NOT using -e/-o pipefail so minor warnings don't kill the run)
+set -u
+shopt -s extglob
+
+usage() {
+  cat <<'EOF'
+Usage:
+  vidclip INPUT --intervals "t1a-t1b,t2a-t2b,..." [-o OUTPUT] [--crf N] [--preset NAME] [--threads N] [--dry-run] [--debug]
+
+Notes:
+  - Times can be MM:SS or HH:MM:SS (integer seconds).
+  - This variant opens one input per interval with -ss (start) and -t (duration),
+    then concatenates via a small -filter_complex graph. Much lower memory use
+    than trim/atrim on a single input.
+EOF
+}
+
+[[ $# -lt 2 ]] && { usage; exit 1; }
+
+INPUT="$1"; shift
+INTERVALS=""
+OUTPUT=""
+CRF="18"
+PRESET="medium"
+THREADS="2"      # keep it modest for RAM; adjust if you like
+DRY_RUN=false
+DEBUG=false
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --intervals) INTERVALS="${2:-}"; shift 2 ;;
+    -o|--output) OUTPUT="${2:-}"; shift 2 ;;
+    --crf)       CRF="${2:-}"; shift 2 ;;
+    --preset)    PRESET="${2:-}"; shift 2 ;;
+    --threads)   THREADS="${2:-}"; shift 2 ;;
+    --dry-run)   DRY_RUN=true; shift ;;
+    --debug)     DEBUG=true; shift ;;
+    -h|--help)   usage; exit 0 ;;
+    *) echo "Unknown argument: $1"; usage; exit 1 ;;
+  esac
+done
+
+$DEBUG && set -x
+
+echo "▶ vidclip starting…"
+echo "  Input     : ${INPUT:-<none>}"
+echo "  Intervals : ${INTERVALS:-<none>}"
+echo "  CRF/Preset: $CRF / $PRESET"
+echo "  Threads   : $THREADS"
+
+[[ -n "$INPUT" && -f "$INPUT" ]] || { echo "Input not found: $INPUT"; exit 1; }
+[[ -n "$INTERVALS" ]] || { echo "--intervals is required"; exit 1; }
+
+# Default output name
+if [[ -z "$OUTPUT" ]]; then
+  base="${INPUT%.*}"; ext="${INPUT##*.}"
+  OUTPUT="${base}_cut.${ext}"
+fi
+echo "  Output    : $OUTPUT"
+
+# Pure-bash time parser: "MM:SS" or "HH:MM:SS" -> integer seconds
+to_seconds() {
+  local t="$1"
+  local IFS=":"
+  read -r f1 f2 f3 <<<"$t"
+  if [[ -n "${f3-}" ]]; then
+    [[ "$f1" =~ ^[0-9]+$ && "$f2" =~ ^[0-9]+$ && "$f3" =~ ^[0-9]+$ ]] || { echo "Invalid HH:MM:SS time: $t" >&2; return 2; }
+    echo $(( 10#$f1*3600 + 10#$f2*60 + 10#$f3 ))
+  else
+    [[ "$f1" =~ ^[0-9]+$ && "$f2" =~ ^[0-9]+$ ]] || { echo "Invalid MM:SS time: $t" >&2; return 2; }
+    echo $(( 10#$f1*60 + 10#$f2 ))
+  fi
+}
+
+# Parse intervals
+IFS=',' read -r -a chunks <<<"$INTERVALS"
+(( ${#chunks[@]} > 0 )) || { echo "No intervals parsed."; exit 1; }
+
+starts=()
+durs=()
+for seg in "${chunks[@]}"; do
+  seg="${seg##+([[:space:]])}"; seg="${seg%%+([[:space:]])}"
+  [[ -n "$seg" ]] || continue
+  [[ "$seg" == *-* ]] || { echo "Bad interval (missing '-'): $seg"; exit 1; }
+  s_raw="${seg%%-*}"; e_raw="${seg#*-}"
+  s=$(to_seconds "$s_raw") || exit 1
+  e=$(to_seconds "$e_raw") || exit 1
+  (( e > s )) || { echo "Interval end must be greater than start: $seg"; exit 1; }
+  starts+=("$s")
+  durs+=("$(( e - s ))")
+done
+
+n="${#starts[@]}"
+(( n > 0 )) || { echo "No valid intervals after parsing."; exit 1; }
+
+# Detect audio presence
+has_audio=false
+if ffprobe -v error -select_streams a:0 -show_entries stream=index -of csv=p=0 "$INPUT" >/dev/null 2>&1; then
+  has_audio=true
+fi
+echo "  Has audio : $has_audio"
+echo "—"
+
+# Build ffmpeg command: one -ss/-t per interval before -i
+cmd=(ffmpeg -hide_banner -y)
+for i in $(seq 0 $((n-1))); do
+  cmd+=(-ss "${starts[$i]}" -t "${durs[$i]}" -i "$INPUT")
+done
+
+# Build filter_complex concat for N inputs
+# Labels: [0:v][0:a][1:v][1:a]... depending on audio presence
+concat_labels=""
+for i in $(seq 0 $((n-1))); do
+  concat_labels+="[$i:v]"
+  $has_audio && concat_labels+="[$i:a]"
+done
+
+if $has_audio; then
+  filter_complex="${concat_labels}concat=n=${n}:v=1:a=1[outv][outa]"
+  map_args=(-map "[outv]" -map "[outa]")
+else
+  filter_complex="${concat_labels}concat=n=${n}:v=1:a=0[outv]"
+  map_args=(-map "[outv]")
+fi
+
+# Codecs and rate control
+encode_args=(-c:v libx264 -preset "$PRESET" -crf "$CRF" -movflags +faststart -threads "$THREADS")
+$has_audio && encode_args+=(-c:a aac -b:a 192k -ac 2)
+
+# Some decoders respect global -threads; keep it modest
+cmd+=(-filter_complex "$filter_complex" "${map_args[@]}" "${encode_args[@]}" "$OUTPUT")
+
+echo "ffmpeg preview:"
+printf '%q ' "${cmd[@]}"; echo
+echo "—"
+
+$DRY_RUN && { echo "Dry run requested; not executing ffmpeg."; exit 0; }
+
+# Run it
+"${cmd[@]}"
+
+echo "✔ Done: $OUTPUT"
+
