@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# 
+# https://chatgpt.com/share/68d8737b-e4ac-8005-9925-2e50b9667db5
+#
 # Memory-friendly multi-clip concat with -filter_complex.
 # Opens the input once per interval with -ss/-t, then concat.
 # Usage:
